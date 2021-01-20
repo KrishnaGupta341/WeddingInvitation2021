@@ -21,13 +21,10 @@ body {
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1.6;
   font-size: 16px;
-  /* background: #fff; */
-  /* color: #848484; */
   color: #fff;
   font-weight: 300;
   overflow-x: hidden;
 
-    /* background-image: url("../images/custom/cover_bg_1_v2.jpg"); */
     min-height: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -1328,4 +1325,12 @@ figure {
 }
 #fh5co-countdown .countdown{
     color: white;
+}
+footer .credits > h4,
+footer .credits > a {
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.5;
+}
+.mb-2{
+    margin-bottom : 0.5em;
 }
