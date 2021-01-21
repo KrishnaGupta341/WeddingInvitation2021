@@ -1333,4 +1333,8 @@ footer .credits > a {
 }
 .mb-2{
     margin-bottom : 0.5em;
+    font-size: 90%;
+}
+.italicText{
+    font-style: italic;
 }
