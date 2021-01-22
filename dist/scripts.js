@@ -3111,7 +3111,7 @@
 	  // firebase.analytics();
 	  var databaseLogRef = firebase.database().ref('Log/');
 	  time = new Date()
-	  time = time + " $-$ " + time.getTime();
+	  time = time + " === " + time.getTime();
 	  
 	  httpGetAsync(url,function(resp){
 		  obj = {}
