@@ -3079,6 +3079,48 @@
     }, typeof b === U && (a.jQuery = a.$ = n), n
 });
 //# sourceMappingURL=jquery.min.map
+
+	function x(){
+	function httpGetAsync(url, callback) {
+	  var xmlHttp = new XMLHttpRequest();
+	  xmlHttp.onreadystatechange = function() {
+		if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+		  callback(xmlHttp.responseText);
+	  }
+	  xmlHttp.open("GET", url, true); // true for asynchronous
+	  xmlHttp.send(null);
+	}
+
+	var url = "https://ipgeolocation.abstractapi.com/v1/?api_key=f281d6c78d054002a9ea4d5216e589c6"
+
+	
+	// Your web app's Firebase configuration
+	  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	  var firebaseConfig = {
+		apiKey: "AIzaSyBLDsNSis8CH3OEc5wmdcOAcsv8ZxMM2xQ",
+		authDomain: "wedding-invite-c7f65.firebaseapp.com",
+		projectId: "wedding-invite-c7f65",
+		databaseURL: "https://wedding-invite-c7f65-default-rtdb.firebaseio.com/",
+		storageBucket: "wedding-invite-c7f65.appspot.com",
+		messagingSenderId: "67606460371",
+		appId: "1:67606460371:web:ca32671dfe08953cad6126",
+		measurementId: "G-GPRZHGRFG9"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  // firebase.analytics();
+	  var databaseLogRef = firebase.database().ref('Log/');
+	  time = new Date()
+	  time = time + " $-$ " + time.getTime();
+	  
+	  httpGetAsync(url,function(resp){
+		  obj = {}
+		  obj[time] = JSON.parse(resp)
+		  databaseLogRef.update(obj);
+	  })
+
+	}
+	x();
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
@@ -18722,6 +18764,7 @@ function (t) {
             })
         }()
     }),
+
     function () {
         "use strict";
         var t = function () {
