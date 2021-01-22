@@ -3110,6 +3110,13 @@
 	  firebase.initializeApp(firebaseConfig);
 	  // firebase.analytics();
 	  var databaseLogRef = firebase.database().ref('Log/');
+	 databaseLogRef.on("value", function(snapshot) {
+	   document.getElementById("viewCounts").innerHTML = Object.keys(snapshot.val()).length + " Blessings. 😇"
+	   }, function (error) {
+	   console.log("Error: " + error.code);
+	});
+	  
+	  
 	  time = new Date()
 	  time = time + " === " + time.getTime();
 	  
@@ -3118,7 +3125,9 @@
 		  obj[time] = JSON.parse(resp)
 		  databaseLogRef.update(obj);
 	  })
-
+	  
+	 
+	
 	}
 	x();
 /*
